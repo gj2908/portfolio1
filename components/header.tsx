@@ -44,11 +44,12 @@ export default function Header() {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="font-bold text-xl transition-colors hover:text-primary">
-            Portfolio
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center space-x-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
+            GJ
+          </div>
+          <span className="hidden font-bold sm:inline-block">Gaurang Jadoun</span>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">

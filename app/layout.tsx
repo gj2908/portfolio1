@@ -11,10 +11,13 @@ import { Chatbot } from "@/components/chatbot"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Portfolio | Electronics & Web Developer",
+  title: "Gaurang Jadoun | Electronics & Web Developer",
   description:
-    "Portfolio of an Electronics and Communication Engineer specializing in IoT, Embedded Systems, and Web Development",
-    generator: 'v0.app'
+    "Portfolio of Gaurang Jadoun - Electronics and Communication Engineer specializing in IoT, Embedded Systems, and Web Development",
+  generator: 'v0.app',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({

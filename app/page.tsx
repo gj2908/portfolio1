@@ -28,8 +28,8 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden animate-slide-in animate-float">
-          <Image src="/profile.jpg" alt="Gaurang Jadoun" fill className="object-cover" priority />
+        <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden animate-slide-in animate-float bg-muted">
+          <Image src="/profile.jpg" alt="Gaurang Jadoun" fill className="object-contain" priority />
         </div>
       </section>
 
@@ -62,14 +62,14 @@ export default function Home() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Badge>2023</Badge>
+                <Badge>2022-2023</Badge>
                 <div>
                   <p className="font-medium">12th Grade - 79.2%</p>
                   <p className="text-sm text-muted-foreground">Sumeet Rahul Goel Memorial Sr. Sec. School (CBSE), Agra</p>
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Badge>2021</Badge>
+                <Badge>2020-2021</Badge>
                 <div>
                   <p className="font-medium">10th Grade - 92.4%</p>
                   <p className="text-sm text-muted-foreground">St. Paul's Church College (CISCE), Agra</p>
