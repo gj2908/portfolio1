@@ -28,7 +28,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="relative h-[250px] md:h-[350px] w-full max-w-[280px] md:max-w-[350px] mx-auto rounded-lg overflow-hidden animate-slide-in animate-float bg-muted">
+        <div className="relative h-[300px] md:h-[400px] w-full max-w-[300px] md:max-w-[400px] mx-auto rounded-lg overflow-hidden animate-slide-in animate-float bg-muted">
           <Image src="/profile.jpg" alt="Gaurang Jadoun" fill className="object-contain" priority />
         </div>
       </section>
