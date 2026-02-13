@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Github } from "lucide-react"
 
 interface ProjectCardProps {
   id: number
@@ -9,9 +10,10 @@ interface ProjectCardProps {
   description: string
   tags: string[]
   category: string
+  githubUrl?: string
 }
 
-export function ProjectCard({ id, title, description, tags, category }: ProjectCardProps) {
+export function ProjectCard({ id, title, description, tags, category, githubUrl }: ProjectCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-lg border animate-fade-in-up hover-lift">
       <div className="aspect-video overflow-hidden">
@@ -36,12 +38,21 @@ export function ProjectCard({ id, title, description, tags, category }: ProjectC
             </Badge>
           ))}
         </div>
-        <Button asChild className="relative overflow-hidden group-hover:bg-primary/90">
-          <Link href={`/projects/project-${id}`} className="relative z-10">
-            <span className="relative z-10">View Project</span>
-            <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
-          </Link>
-        </Button>
+        <div className="flex gap-2">
+          <Button asChild className="relative overflow-hidden group-hover:bg-primary/90 flex-1">
+            <Link href={`/projects/project-${id}`} className="relative z-10">
+              <span className="relative z-10">View Project</span>
+              <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
+            </Link>
+          </Button>
+          {githubUrl && (
+            <Button asChild variant="outline" size="icon" className="hover-lift">
+              <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4" />
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   )

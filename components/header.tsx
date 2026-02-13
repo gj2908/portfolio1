@@ -12,9 +12,8 @@ const navItems = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Publications", path: "/publications" },
-  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
-  { name: "Resume", path: "/resume.pdf", icon: <FileText className="h-4 w-4" /> },
+  { name: "Resume", path: "/resume.pdf", icon: <FileText className="h-4 w-4" />, external: true },
 ]
 
 export default function Header() {
@@ -57,6 +56,8 @@ export default function Header() {
             <Link
               key={item.path}
               href={item.path}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary relative group",
                 pathname === item.path ? "text-primary" : "text-muted-foreground",
@@ -101,6 +102,8 @@ export default function Header() {
             <Link
               key={item.path}
               href={item.path}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary flex items-center",
                 pathname === item.path ? "text-primary" : "text-muted-foreground",

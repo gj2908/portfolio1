@@ -34,6 +34,7 @@ export default function ProjectsPage() {
                 description={project.description}
                 tags={project.tags}
                 category={project.category}
+                githubUrl={project.githubUrl}
               />
             ))}
           </div>
@@ -49,6 +50,7 @@ export default function ProjectsPage() {
                 description={project.description}
                 tags={project.tags}
                 category={project.category}
+                githubUrl={project.githubUrl}
               />
             ))}
           </div>
@@ -64,6 +66,7 @@ export default function ProjectsPage() {
                 description={project.description}
                 tags={project.tags}
                 category={project.category}
+                githubUrl={project.githubUrl}
               />
             ))}
           </div>
@@ -79,6 +82,7 @@ export default function ProjectsPage() {
                 description={project.description}
                 tags={project.tags}
                 category={project.category}
+                githubUrl={project.githubUrl}
               />
             ))}
           </div>

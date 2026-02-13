@@ -18,6 +18,7 @@ export const projects: Project[] = [
         tags: ["Arduino Uno R4", "Python", "C++", "Embedded C", "IoT Sensors", "ESP32"],
         category: "IoT",
         date: "Jan 2026",
+        githubUrl: "https://github.com/gj2908/SmartAsthamaAlert",
         details: [
             "Designed a wearable smart band equipped with environmental and physiological sensors to monitor asthma triggers in real-time",
             "Developed a microcontroller-based system (ESP32) to process sensor data and transmit alerts to a companion application via Bluetooth/Wi-Fi",
@@ -44,6 +45,7 @@ export const projects: Project[] = [
         tags: ["Django", "SQLite", "Python", "HTML", "CSS"],
         category: "Web Development",
         date: "Feb 2025 - Mar 2025",
+        githubUrl: "https://github.com/gj2908/ERP2.5",
         details: [
             "Django + SQLite based automated attendance system",
             "Admin, Faculty and Student Dashboards were introduced",
@@ -58,6 +60,7 @@ export const projects: Project[] = [
         tags: ["LoRaWAN", "Embedded C", "Sensors", "C++"],
         category: "Embedded Systems",
         date: "Mar 2024",
+        githubUrl: "https://github.com/gj2908/Ardubots",
         details: [
             "Built LoRa-based long-range sensor network",
             "Created dashboard for real-time monitoring",

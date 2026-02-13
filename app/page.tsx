@@ -3,6 +3,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Cpu, Globe, Zap } from "lucide-react"
+import { ProjectCard } from "@/components/project-card"
+import { projects } from "@/lib/projects-data"
 
 export default function Home() {
   return (
@@ -228,27 +230,16 @@ export default function Home() {
           </Button>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="group relative overflow-hidden rounded-lg border">
-              <div className="aspect-video overflow-hidden">
-                <Image
-                  src={`/placeholder.svg?height=200&width=400&text=Project+${i}`}
-                  alt={`Project ${i}`}
-                  width={400}
-                  height={200}
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold">Project Title {i}</h3>
-                <p className="mt-2 text-muted-foreground">
-                  A brief description of this project and the technologies used.
-                </p>
-                <Button variant="link" asChild className="mt-4 p-0">
-                  <Link href={`/projects/project-${i}`}>Learn more</Link>
-                </Button>
-              </div>
-            </div>
+          {projects.slice(0, 3).map((project) => (
+            <ProjectCard
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              category={project.category}
+              githubUrl={project.githubUrl}
+            />
           ))}
         </div>
       </section>

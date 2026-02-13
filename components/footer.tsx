@@ -22,12 +22,12 @@ export default function Footer() {
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild aria-label="Twitter">
-            <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://x.com/gaurangjadoun" target="_blank" rel="noopener noreferrer">
               <Twitter className="h-5 w-5" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild aria-label="Instagram">
-            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://instagram.com/jadoun.gaurang" target="_blank" rel="noopener noreferrer">
               <Instagram className="h-5 w-5" />
             </Link>
           </Button>
