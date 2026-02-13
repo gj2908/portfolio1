@@ -98,7 +98,7 @@ export default function Home() {
           <ul className="space-y-2 text-muted-foreground">
             <li className="flex items-start gap-2">
               <span className="text-primary mt-1">•</span>
-              <span>Developing a cross-platform stock market analysis app using Quasar.js and JavaScript ES6, ensuring high performance across web and mobile devices</span>
+              <span>Developing a cross-platform analysis app using Quasar.js and JavaScript ES6, ensuring high performance across web and mobile devices</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-primary mt-1">•</span>
