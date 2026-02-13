@@ -11,14 +11,15 @@ interface ProjectCardProps {
   tags: string[]
   category: string
   githubUrl?: string
+  image?: string
 }
 
-export function ProjectCard({ id, title, description, tags, category, githubUrl }: ProjectCardProps) {
+export function ProjectCard({ id, title, description, tags, category, githubUrl, image }: ProjectCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-lg border animate-fade-in-up hover-lift">
       <div className="aspect-video overflow-hidden">
         <Image
-          src={`/placeholder.svg?height=200&width=400&text=${title.replace(/\s+/g, "+")}`}
+          src={image || `/placeholder.svg?height=200&width=400&text=${title.replace(/\s+/g, "+")}`}
           alt={title}
           width={400}
           height={200}

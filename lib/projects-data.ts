@@ -7,6 +7,7 @@ export interface Project {
     category: "IoT" | "Embedded Systems" | "Web Development"
     date: string
     githubUrl?: string
+    image?: string
     details: string[]
 }
 
@@ -19,6 +20,7 @@ export const projects: Project[] = [
         category: "IoT",
         date: "Jan 2026",
         githubUrl: "https://github.com/gj2908/SmartAsthamaAlert",
+        image: "/projects/asthma-smart-band.jpg",
         details: [
             "Designed a wearable smart band equipped with environmental and physiological sensors to monitor asthma triggers in real-time",
             "Developed a microcontroller-based system (ESP32) to process sensor data and transmit alerts to a companion application via Bluetooth/Wi-Fi",
@@ -33,6 +35,7 @@ export const projects: Project[] = [
         tags: ["C++", "Arduino", "ESP32", "IoT Sensors"],
         category: "IoT",
         date: "Nov 2025",
+        image: "/projects/fire-alarm-system.jpg",
         details: [
             "Designed an integrated system connecting fire detection sensors with home automation for immediate response",
             "Academic project demonstrating IoT and home automation integration"
@@ -46,6 +49,7 @@ export const projects: Project[] = [
         category: "Web Development",
         date: "Feb 2025 - Mar 2025",
         githubUrl: "https://github.com/gj2908/ERP2.5",
+        image: "/projects/attendance-dashboard.jpg",
         details: [
             "Django + SQLite based automated attendance system",
             "Admin, Faculty and Student Dashboards were introduced",
@@ -61,6 +65,7 @@ export const projects: Project[] = [
         category: "Embedded Systems",
         date: "Mar 2024",
         githubUrl: "https://github.com/gj2908/Ardubots",
+        image: "/projects/lora-network.jpg",
         details: [
             "Built LoRa-based long-range sensor network",
             "Created dashboard for real-time monitoring",
