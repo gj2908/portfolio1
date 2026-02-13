@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Portfolio of Gaurang Jadoun - Electronics and Communication Engineer specializing in IoT, Embedded Systems, and Web Development",
   generator: 'v0.app',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.svg',
   },
 }
 
