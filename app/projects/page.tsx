@@ -1,7 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ProjectCard } from "@/components/project-card"
+import { projects } from "@/lib/projects-data"
 
 export default function ProjectsPage() {
+  const iotProjects = projects.filter(p => p.category === "IoT")
+  const embeddedProjects = projects.filter(p => p.category === "Embedded Systems")
+  const webProjects = projects.filter(p => p.category === "Web Development")
+
   return (
     <div className="container py-12 space-y-8 animate-fade-in">
       <div className="space-y-2">
@@ -21,14 +26,14 @@ export default function ProjectsPage() {
 
         <TabsContent value="all" className="space-y-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-animation">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {projects.map((project) => (
               <ProjectCard
-                key={i}
-                id={i + 1}
-                title={`Project ${i + 1}`}
-                description="A brief description of this project and the technologies used."
-                tags={["IoT", "Web", "Embedded"].slice(0, (i % 3) + 1)}
-                category={["IoT", "Embedded Systems", "Web Development"][i % 3]}
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                category={project.category}
               />
             ))}
           </div>
@@ -36,14 +41,14 @@ export default function ProjectsPage() {
 
         <TabsContent value="iot" className="space-y-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-animation">
-            {Array.from({ length: 2 }).map((_, i) => (
+            {iotProjects.map((project) => (
               <ProjectCard
-                key={i}
-                id={i + 1}
-                title={`IoT Project ${i + 1}`}
-                description="An Internet of Things project connecting devices and sensors."
-                tags={["IoT", "Sensors", "Cloud"]}
-                category="IoT"
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                category={project.category}
               />
             ))}
           </div>
@@ -51,14 +56,14 @@ export default function ProjectsPage() {
 
         <TabsContent value="embedded" className="space-y-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-animation">
-            {Array.from({ length: 2 }).map((_, i) => (
+            {embeddedProjects.map((project) => (
               <ProjectCard
-                key={i}
-                id={i + 3}
-                title={`Embedded Project ${i + 1}`}
-                description="An embedded systems project using microcontrollers and custom hardware."
-                tags={["Embedded", "Microcontroller", "C++"]}
-                category="Embedded Systems"
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                category={project.category}
               />
             ))}
           </div>
@@ -66,14 +71,14 @@ export default function ProjectsPage() {
 
         <TabsContent value="web" className="space-y-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-animation">
-            {Array.from({ length: 2 }).map((_, i) => (
+            {webProjects.map((project) => (
               <ProjectCard
-                key={i}
-                id={i + 5}
-                title={`Web Project ${i + 1}`}
-                description="A web development project using modern frameworks and technologies."
-                tags={["Web", "React", "Next.js"]}
-                category="Web Development"
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                category={project.category}
               />
             ))}
           </div>

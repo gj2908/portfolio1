@@ -8,16 +8,16 @@ export default function Footer() {
     <footer className="w-full border-t bg-background">
       <div className="container flex flex-col items-center gap-4 py-6 md:flex-row md:justify-between">
         <p className="text-center text-sm text-muted-foreground md:text-left">
-          &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
+          &copy; {new Date().getFullYear()} Gaurang Jadoun. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild aria-label="GitHub">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/gj2908" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild aria-label="LinkedIn">
-            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/gaurangjadoun" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5" />
             </Link>
           </Button>
