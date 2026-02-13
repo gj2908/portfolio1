@@ -12,6 +12,7 @@ const navItems = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Publications", path: "/publications" },
+  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
   { name: "Resume", path: "/resume.pdf", icon: <FileText className="h-4 w-4" />, external: true },
 ]
