@@ -11,12 +11,13 @@ interface ProjectCardProps {
   tags: string[]
   category: string
   githubUrl?: string
+  liveUrl?: string
   image?: string
 }
 
-export function ProjectCard({ id, title, description, tags, category, githubUrl, image }: ProjectCardProps) {
+export function ProjectCard({ id, title, description, tags, category, githubUrl, liveUrl, image }: ProjectCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-lg border animate-fade-in-up hover-lift">
+    <div className="group relative overflow-hidden rounded-lg border animate-fade-in-up hover-lift flex flex-col h-full">
       <div className="aspect-video overflow-hidden">
         <Image
           src={image || `/placeholder.svg?height=200&width=400&text=${title.replace(/\s+/g, "+")}`}
@@ -26,32 +27,54 @@ export function ProjectCard({ id, title, description, tags, category, githubUrl,
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
         />
       </div>
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-xl font-semibold">{title}</h3>
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-start justify-between gap-2 mb-2">
+          <h3 className="text-xl font-semibold flex-1">{title}</h3>
+        </div>
+        <div className="flex justify-center mb-3">
           <Badge className="transition-all duration-300 group-hover:scale-110">{category}</Badge>
         </div>
-        <p className="text-muted-foreground mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <p className="text-muted-foreground mb-4 flex-1">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-4 justify-center">
           {tags.map((tag) => (
             <Badge key={tag} variant="outline" className="transition-all duration-300 hover:bg-primary/10">
               {tag}
             </Badge>
           ))}
         </div>
-        <div className="flex gap-2">
-          <Button asChild className="relative overflow-hidden group-hover:bg-primary/90 flex-1">
-            <Link href={`/projects/project-${id}`} className="relative z-10">
-              <span className="relative z-10">View Project</span>
-              <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
-            </Link>
-          </Button>
-          {githubUrl && (
-            <Button asChild variant="outline" size="icon" className="hover-lift">
-              <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4" />
-              </Link>
-            </Button>
+        <div className="flex gap-2 mt-auto">
+          {liveUrl ? (
+            <>
+              <Button asChild className="relative overflow-hidden group-hover:bg-primary/90 flex-1">
+                <Link href={liveUrl} target="_blank" rel="noopener noreferrer" className="relative z-10">
+                  <span className="relative z-10">Live Demo</span>
+                  <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
+                </Link>
+              </Button>
+              {githubUrl && (
+                <Button asChild variant="outline" size="icon" className="hover-lift">
+                  <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+            </>
+          ) : (
+            <>
+              <Button asChild className="relative overflow-hidden group-hover:bg-primary/90 flex-1">
+                <Link href={`/projects/project-${id}`} className="relative z-10">
+                  <span className="relative z-10">View Project</span>
+                  <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
+                </Link>
+              </Button>
+              {githubUrl && (
+                <Button asChild variant="outline" size="icon" className="hover-lift">
+                  <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+            </>
           )}
         </div>
       </div>

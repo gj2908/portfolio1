@@ -7,6 +7,7 @@ export interface Project {
     category: "IoT" | "Embedded Systems" | "Web Development"
     date: string
     githubUrl?: string
+    liveUrl?: string
     image?: string
     details: string[]
 }
@@ -20,6 +21,7 @@ export const projects: Project[] = [
         category: "IoT",
         date: "Jan 2026",
         githubUrl: "https://github.com/gj2908/SmartAsthamaAlert",
+        liveUrl: "https://project4.gaurangjadoun.in",
         image: "/projects/asthma-smart-band.jpg",
         details: [
             "Designed a wearable smart band equipped with environmental and physiological sensors to monitor asthma triggers in real-time",

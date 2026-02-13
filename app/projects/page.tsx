@@ -35,6 +35,7 @@ export default function ProjectsPage() {
                 tags={project.tags}
                 category={project.category}
                 githubUrl={project.githubUrl}
+                liveUrl={project.liveUrl}
                 image={project.image}
               />
             ))}
