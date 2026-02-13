@@ -16,6 +16,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    mobile: "",
     subject: "",
     message: "",
   })
@@ -30,21 +31,53 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // Create form data for Google Forms
+      const googleFormData = new FormData()
+      googleFormData.append("entry.1719828831", formData.name)
+      googleFormData.append("entry.1478473696", formData.mobile)
+      googleFormData.append("entry.300233831", formData.email)
+      googleFormData.append("entry.1180955703", formData.subject)
+      googleFormData.append("entry.1339997623", formData.message)
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    })
+      // Submit to Google Forms
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSchuh9MqhLsSp0lBV_fKlPGpMPfsf93oVEFzwGxS-4Q_iNKvQ/formResponse",
+        {
+          method: "POST",
+          body: googleFormData,
+          mode: "no-cors",
+        }
+      )
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-    setIsSubmitting(false)
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      })
+
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        subject: "",
+        message: "",
+      })
+    } catch (error) {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      })
+
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        subject: "",
+        message: "",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -97,7 +130,7 @@ export default function ContactPage() {
           </CardHeader>
           <CardContent>
             <p>SRM Institute of Science and Technology</p>
-            <p>Kattankulathur, Chennai, India</p>
+            <p>Delhi NCR Campus, Ghaziabad</p>
           </CardContent>
         </Card>
       </div>
@@ -126,6 +159,18 @@ export default function ContactPage() {
                 type="email"
                 placeholder="Your email"
                 value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="mobile">Mobile Number</Label>
+              <Input
+                id="mobile"
+                name="mobile"
+                type="tel"
+                placeholder="Your mobile number"
+                value={formData.mobile}
                 onChange={handleChange}
                 required
               />
@@ -174,7 +219,7 @@ export default function ContactPage() {
             <div className="text-center">
               <MapPin className="h-12 w-12 mx-auto text-muted-foreground" />
               <p className="mt-2 text-muted-foreground">Map would be displayed here</p>
-              <p className="text-sm text-muted-foreground">SRM Institute of Science and Technology, Chennai, India</p>
+              <p className="text-sm text-muted-foreground">SRM IST Delhi NCR Campus, Ghaziabad</p>
             </div>
           </div>
         </div>

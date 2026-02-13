@@ -29,7 +29,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden animate-slide-in animate-float">
-          <Image src="/placeholder.svg?height=400&width=400" alt="Profile" fill className="object-cover" priority />
+          <Image src="/placeholder-user.jpg" alt="Gaurang Jadoun" fill className="object-cover" priority />
         </div>
       </section>
 
