@@ -28,8 +28,8 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="relative h-[300px] md:h-[400px] w-full max-w-[300px] md:max-w-[400px] mx-auto rounded-lg overflow-hidden animate-slide-in animate-float bg-muted">
-          <Image src="/profile.jpg" alt="Gaurang Jadoun" fill className="object-contain" priority />
+        <div className="relative h-[350px] md:h-[450px] w-full max-w-[350px] md:max-w-[450px] mx-auto rounded-lg overflow-hidden animate-slide-in animate-float">
+          <Image src="/profile.jpg" alt="Gaurang Jadoun" fill className="object-cover" priority />
         </div>
       </section>
 
